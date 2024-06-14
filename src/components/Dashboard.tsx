@@ -6,10 +6,10 @@ export default function Dashboard() {
   return (
     <div className="min-h-screen flex flex-col p-5 md:flex-row bg-gradient-to-british-racing-green">
       <div className="flex flex-col gap-2 flex-shrink-0">
-        <Link className="mb-2 flex flex-col h-20 items-end justify-between rounded-md bg-gradient-to-r from-british-racing-green to-rich-gold p-4 md:h-40" to="/">
+        <div className="mb-2 flex flex-col h-20 items-end justify-between rounded-md bg-gradient-to-r from-british-racing-green to-rich-gold p-4 md:h-40">
           <div className="w-32 text-white md:w-40">Team Blockchain Advisors</div>
           <div className="w-32 text-gray-400 md:w-40">Dashboard</div>
-        </Link>
+        </div>
         <NavLink to="/dashboard/splitparty" className={({isActive}) => "flex h-[48px] grow items-center justify-center gap-2 rounded-md p-3 text-sm font-medium hover:bg-green-800 hover:text-gray-50 md:flex-none md:justify-start md:p-2 md:px-3" + (isActive ? " bg-green-800 text-gray-50" : " bg-green-900 text-gray-50")}>
           Split Party
         </NavLink>
