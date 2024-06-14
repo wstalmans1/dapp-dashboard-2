@@ -14,7 +14,7 @@ export default function Dashboard() {
           Split Party
         </NavLink>
         <NavLink to="/dashboard/paywithmetamask" className={({isActive}) => "flex h-[48px] grow items-center justify-center gap-2 rounded-md p-3 text-sm font-medium hover:bg-green-800 hover:text-gray-50 md:flex-none md:justify-start md:p-2 md:px-3" + (isActive ? " bg-green-800 text-gray-50" : " bg-green-900 text-gray-50")}>
-          Pay with Metamask
+          Pay with MetaMask
         </NavLink>
         <NavLink to="/dashboard/paywithsigner" className={({isActive}) => "flex h-[48px] grow items-center justify-center gap-2 rounded-md p-3 text-sm font-medium hover:bg-green-800 hover:text-gray-50 md:flex-none md:justify-start md:p-2 md:px-3" + (isActive ? " bg-green-800 text-gray-50" : " bg-green-900 text-gray-50")}>
           Pay with Signer
