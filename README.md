@@ -1,3 +1,9 @@
+# Note to self: 
+I've been implementing this very instructive video on react client side routing (https://www.youtube.com/watch?v=oTIJunBa6MA) + this articles (https://stackoverflow.com/questions/64546654/how-to-use-react-routing-with-ipfs  &  https://reactrouter.com/en/main/routers/create-hash-router) that solved the issue that links didn't resolve on IPFS (solution to the prob = replace "createBrowserRouter" with "createHashRouter" + the url links are preceded by a hash. e.g. local:3000/#/profiles)
+--------------------------------------------------
+
+
+from here starts the readme that came with the React + Vite template from Fleek
 # React Boilerplate
 ![React Boilerplate](https://github.com/fleek-tools/react-template/assets/74613246/443647a2-26bd-4872-aafd-fe6a16f0e2f5)
 
