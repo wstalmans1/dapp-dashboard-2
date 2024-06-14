@@ -3,16 +3,26 @@ import ReactDOM from "react-dom/client";
 import { createHashRouter, RouterProvider } from "react-router-dom";
 
 import HomePage from "./components/HomePage";
-import ProfilesPage from "./components/ProfilesPage";
+//import ProfilePage from "./components/ProfilePage";
+
+
+import Dashboard from "./components/Dashboard";
 import NotFoundPage from "./components/NotFoundPage";
-import ProfilePage from "./components/ProfilePage";
+import PartySplit from "./components/PartySplit";
+import PayWithMetamask from "./components/PayWithMetamask";
+import PayWithSigner from "./components/PayWithSigner";
+
 
 
 import './styles/main.css';
 
 const router = createHashRouter([ 
     { path: "/", element: <HomePage />, errorElement: <NotFoundPage />},
-    { path: "/profiles", element: <ProfilesPage />, children: [{ path: "/profiles/:profileId", element: <ProfilePage />}]},
+    { path: "/dashboard", element: <Dashboard />, children: [
+        { path: "splitparty", element: <PartySplit />},
+        { path: "paywithmetamask", element: <PayWithMetamask />},
+        { path: "paywithsigner", element: <PayWithSigner />},
+    ]},
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
