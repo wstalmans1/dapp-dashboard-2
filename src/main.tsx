@@ -22,6 +22,7 @@ const router = createHashRouter([
         { path: "splitparty", element: <PartySplit />},
         { path: "paywithmetamask", element: <PayWithMetamask />},
         { path: "paywithsigner", element: <PayWithSigner />},
+        { path: "connection", element: <NotFoundPage />},
     ]},
 ]);
 

@@ -7,6 +7,7 @@ export default {
   theme: {
     extend: {
       colors: {
+        'darkerbritish-racing-green': '#002814',
         'british-racing-green': '#004225', // Adding British racing green color
         'lighterbritish-racing-green': '#006400', // Adding British racing green color
         'mustard-yellow': '#FFDB58', // Adding mustard yellow color
