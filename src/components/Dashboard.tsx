@@ -8,7 +8,7 @@ export default function Dashboard() {
       <div className="w-full flex-none md:w-64">
         <div className="flex h-full flex-col px-3 py-4 md:px-2">
           <div className="mb-2 flex flex-col justify-between h-20 md:h-40 items-stretch rounded-md bg-gradient-to-r from-british-racing-green to-rich-gold p-4">
-            <div className="w-full flex flex-col items-start text-2xl">
+            <div className="w-full flex flex-col items-start text-xs sm:text-sm md:text-lg lg:text-2xl">
               <div>Team</div>
               <div>Blockchain</div>
               <div>Advisors</div>
