@@ -38,7 +38,7 @@ export default function Dashboard() {
       </div>
       <div className='flex-grow flex flex-col flex-shrink-0 m-2'>
         <div className="flex items-center justify-center mb-1 bg-white bg-opacity-5 w-full rounded-lg p-2">
-          <div className="mb-2">Connection Status: {/* Add connection status here */}</div>
+          <div className="mb-2">Status of the connection: {/* Add connection status here */}</div>
           <button className="px-4 py-2 bg-blue-500 text-white rounded">Connect to MetaMask</button>
         </div>
         <div className="flex-grow bg-white bg-opacity-5 w-full rounded-lg mt-1">
