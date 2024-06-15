@@ -22,7 +22,7 @@ export default function Dashboard() {
               </NavLink>
               <NavLink to="/dashboard/paywithmetamask" className={({ isActive }) => `flex h-[48px] grow items-center justify-center gap-2 rounded-md text-gray-50 p-3 text-sm font-medium md:flex-none md:justify-start md:p-2 md:px-3 ${ isActive ? 'bg-green-600' : 'bg-green-800 hover:bg-green-600'}`}>
                 <DocumentDuplicateIcon className="h-5 w-5" />
-                <span className="hidden md:block">Pay with MetaMask wallet</span>
+                <span className="hidden md:block">Pay with MetaMask</span>
               </NavLink>
               <NavLink to="/dashboard/paywithsigner" className={({ isActive }) => `flex h-[48px] grow items-center justify-center gap-2 rounded-md text-gray-50 p-3 text-sm font-medium md:flex-none md:justify-start md:p-2 md:px-3 ${ isActive ? 'bg-green-600' : 'bg-green-800 hover:bg-green-600'}`}>
                 <DocumentDuplicateIcon className="h-5 w-5" />
