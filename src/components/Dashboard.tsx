@@ -36,14 +36,16 @@ export default function Dashboard() {
             </div>
         </div>
       </div>
-      <div className='flex-grow flex flex-col flex-shrink-0 m-2'>
-        <div className="flex items-center justify-center mb-1 bg-white bg-opacity-5 w-full rounded-lg p-2">
-          <div className="mb-2">Status of the connection: {/* Add connection status here */}</div>
-          <button className="px-4 py-2 bg-blue-500 text-white rounded">Connect to MetaMask</button>
-        </div>
-        <div className="flex-grow bg-white bg-opacity-5 w-full rounded-lg mt-1">
-          <Outlet />
-        </div>
+      <div className='flex-grow p-6 md:overflow-y-auto md:p-12'>
+        <main>
+          <h1 className="__className_aaf875 mb-4 text-xl md:text-2xl">Dashboard</h1>
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4"></div>
+          <div className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-4 lg:grid-cols-8"></div>
+          
+          <div className="flex-grow bg-white bg-opacity-5 w-full rounded-lg mt-1">
+            <Outlet />
+          </div>
+        </main>  
       </div>
     </div>
   );
