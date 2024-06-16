@@ -14,30 +14,30 @@ export default function Dashboard() {
               <div className="hidden sm:block">Blockchain</div>
               <div className="hidden sm:block">Advisors</div>
             </div>
-            <div className="p-2 w-full flex items-end justify-end text-blue-700 text-sm sm:text-base md:text-xl lg:text-xl">
+            <div className="p-2 w-full flex items-end justify-end text-red-800 text-sm sm:text-base md:text-xl lg:text-xl">
               <span className="block sm:hidden">Dashboard</span>
               <span className="hidden sm:block">Dashboard</span>
             </div>
           </div>
           <div className="flex grow flex-row justify-between space-x-2 md:flex-col md:space-x-0 md:space-y-2">
-              <NavLink to="/dashboard/splitparty" className={({ isActive }) => `flex h-[48px] grow items-center justify-center gap-2 rounded-md text-gray-50 p-3 text-sm font-medium md:flex-none md:justify-start md:p-2 md:px-3 ${ isActive ? 'bg-green-700' : 'bg-green-800 hover:bg-green-700'}`}>
+              <NavLink to="/dashboard/splitparty" className={({ isActive }) => `flex h-[48px] grow items-center justify-center gap-2 rounded-md text-gray-50 p-3 text-sm font-medium md:flex-none md:justify-start md:p-2 md:px-3 ${ isActive ? 'bg-red-800' : 'bg-green-800 hover:bg-red-900'}`}>
                 <UserGroupIcon className="h-5 w-5" />
                 <span className="hidden md:block">Split Party</span>
               </NavLink>
-              <NavLink to="/dashboard/paywithmetamask" className={({ isActive }) => `flex h-[48px] grow items-center justify-center gap-2 rounded-md text-gray-50 p-3 text-sm font-medium md:flex-none md:justify-start md:p-2 md:px-3 ${ isActive ? 'bg-green-700' : 'bg-green-800 hover:bg-green-700'}`}>
+              <NavLink to="/dashboard/paywithmetamask" className={({ isActive }) => `flex h-[48px] grow items-center justify-center gap-2 rounded-md text-gray-50 p-3 text-sm font-medium md:flex-none md:justify-start md:p-2 md:px-3 ${ isActive ? 'bg-red-800' : 'bg-green-800 hover:bg-red-900'}`}>
                 <DocumentDuplicateIcon className="h-5 w-5" />
                 <span className="hidden md:block">Pay with MetaMask</span>
               </NavLink>
-              <NavLink to="/dashboard/paywithsigner" className={({ isActive }) => `flex h-[48px] grow items-center justify-center gap-2 rounded-md text-gray-50 p-3 text-sm font-medium md:flex-none md:justify-start md:p-2 md:px-3 ${ isActive ? 'bg-green-700' : 'bg-green-800 hover:bg-green-700'}`}>
+              <NavLink to="/dashboard/paywithsigner" className={({ isActive }) => `flex h-[48px] grow items-center justify-center gap-2 rounded-md text-gray-50 p-3 text-sm font-medium md:flex-none md:justify-start md:p-2 md:px-3 ${ isActive ? 'bg-red-800' : 'bg-green-800 hover:bg-red-900'}`}>
                 <DocumentDuplicateIcon className="h-5 w-5" />
                 <span className="hidden md:block">Pay with Signer</span>
               </NavLink>
               <div className="hidden h-auto w-full grow rounded-md bg-green-900 md:block"></div>
-              <NavLink to="/" className={({ isActive }) => `flex h-[48px] grow items-center justify-center gap-2 rounded-md text-gray-50 p-3 text-sm font-medium md:flex-none md:justify-start md:p-2 md:px-3 ${ isActive ? 'bg-green-700' : 'bg-green-800 hover:bg-green-700'}`}>
+              <NavLink to="/" className={({ isActive }) => `flex h-[48px] grow items-center justify-center gap-2 rounded-md text-gray-50 p-3 text-sm font-medium md:flex-none md:justify-start md:p-2 md:px-3 ${ isActive ? 'bg-red-800' : 'bg-green-800 hover:bg-red-900'}`}>
                 <HomeIcon className="h-5 w-5" />
                 <span className="hidden md:block">Home</span>
               </NavLink>
-              <NavLink to="/dashboard/connection" className={({ isActive }) => `flex h-[48px] grow items-center justify-center gap-2 rounded-md text-gray-50 p-3 text-sm font-medium md:flex-none md:justify-start md:p-2 md:px-3 ${ isActive ? 'bg-green-700' : 'bg-green-800 hover:bg-green-700'}`}>
+              <NavLink to="/dashboard/connection" className={({ isActive }) => `flex h-[48px] grow items-center justify-center gap-2 rounded-md text-gray-50 p-3 text-sm font-medium md:flex-none md:justify-start md:p-2 md:px-3 ${ isActive ? 'bg-red-800' : 'bg-green-800 hover:bg-red-900'}`}>
                 <PowerIcon className="h-5 w-5" />
                 <span className="hidden md:block">connection</span>
               </NavLink>
