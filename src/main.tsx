@@ -1,19 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { createHashRouter, RouterProvider } from "react-router-dom";
-
 import HomePage from "./components/HomePage";
-//import ProfilePage from "./components/ProfilePage";
-
-
 import Dashboard from "./components/Dashboard";
 import NotFoundPage from "./components/NotFoundPage";
 import PartySplit from "./components/PartySplit";
 import PayWithMetamask from "./components/PayWithMetamask";
 import PayWithSigner from "./components/PayWithSigner";
-
-
-
 import './styles/main.css';
 
 const router = createHashRouter([ 
