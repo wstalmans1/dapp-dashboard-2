@@ -39,7 +39,7 @@ export default function Dashboard() {
               </NavLink>
               <NavLink to="/dashboard/connection" className={({ isActive }) => `flex h-[48px] grow items-center justify-center gap-2 rounded-md text-gray-50 p-3 text-sm font-medium md:flex-none md:justify-start md:p-2 md:px-3 ${ isActive ? 'bg-red-800' : 'bg-green-800 hover:bg-red-900'}`}>
                 <PowerIcon className="h-5 w-5" />
-                <span className="hidden md:block">connection</span>
+                <span className="hidden md:block">Connection</span>
               </NavLink>
             </div>
         </div>
