@@ -1,6 +1,7 @@
 import '../styles/main.css';
 import { PowerIcon, UserGroupIcon, HomeIcon, DocumentDuplicateIcon } from '@heroicons/react/24/outline';
 import { NavLink, Outlet } from "react-router-dom";
+import ConnectionDot from '../utils/connectiondot';
 
 export default function Dashboard() {
   return (
@@ -37,26 +38,30 @@ export default function Dashboard() {
                 <HomeIcon className="h-5 w-5" />
                 <span className="hidden md:block">Home</span>
               </NavLink>
-              <NavLink to="/dashboard/connection" className={({ isActive }) => `flex h-[48px] grow items-center justify-center gap-2 rounded-md text-gray-50 p-3 text-sm font-medium md:flex-none md:justify-start md:p-2 md:px-3 ${ isActive ? 'bg-red-800' : 'bg-green-800 hover:bg-red-900'}`}>
-                <PowerIcon className="h-5 w-5" />
-                <span className="hidden md:block">Connection</span>
-              </NavLink>
+              
+              {/* <NavLink to="/dashboard/manageconnection" className={({ isActive }) => `flex h-[48px] grow items-center justify-center gap-2 rounded-md text-gray-50 p-3 text-sm font-medium md:flex-none md:justify-start md:p-2 md:px-3 ${ isActive ? 'bg-red-800' : 'bg-green-800 hover:bg-red-900'}`}> */}
+              {/*  <PowerIcon className="h-5 w-5" /> */}
+              {/*  <span className="hidden md:block">Connection</span> */}
+              {/* </NavLink> */}
+            
             </div>
         </div>
       </div>
       <div className='flex-grow p-6 md:overflow-y-auto md:p-12'>
         <main>
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          
+          {/* <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4"> */}
             {/* <Card title="Collected" value={totalPaidInvoices} type="collected" /> */}
             {/* <Card title="Pending" value={totalPendingInvoices} type="pending" /> */}
             {/* <Card title="Total Invoices" value={numberOfInvoices} type="invoices" /> */}
             {/* <Card title="Total Customers" value={numberOfCustomers} type="customers" /> */}
-          </div>
-          <div className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-4 lg:grid-cols-8">
+          {/*</div> */}
+          {/* <div className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-4 lg:grid-cols-8"> */}
             {/* <RevenueChart revenue={revenue}  /> */}
             {/* <LatestInvoices latestInvoices={latestInvoices} /> */}
-          </div>
+          {/* </div> */}
           
+          <div><ConnectionDot /></div>
           <div className="flex-grow bg-white bg-opacity-5 w-full rounded-lg mt-1">
             <Outlet />
           </div>

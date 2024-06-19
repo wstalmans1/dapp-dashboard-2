@@ -8,6 +8,8 @@ import PartySplit from "./components/PartySplit";
 import PayWithMetamask from "./components/PayWithMetamask";
 import PayWithSigner from "./components/PayWithSigner";
 import './styles/main.css';
+import { Web3Provider } from "./web3context/Web3Context";
+
 
 const router = createHashRouter([ 
     { path: "/", element: <HomePage />, errorElement: <NotFoundPage />},
@@ -15,12 +17,14 @@ const router = createHashRouter([
         { path: "splitparty", element: <PartySplit />},
         { path: "paywithmetamask", element: <PayWithMetamask />},
         { path: "paywithsigner", element: <PayWithSigner />},
-        { path: "connection", element: <NotFoundPage />},
+
     ]},
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
     <React.StrictMode>
-        <RouterProvider router={router} />
+        <Web3Provider>
+            <RouterProvider router={router} />
+        </Web3Provider>
     </React.StrictMode>,
 );    

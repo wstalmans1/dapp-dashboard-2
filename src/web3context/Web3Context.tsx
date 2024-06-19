@@ -11,7 +11,9 @@ import React, { createContext, useContext, useEffect, useState } from 'react';
 interface Web3ContextType {
     provider: any;
     account: string | null;
+    balance: string | null;
     connectWallet: () => void;
+    disconnectWallet: () => void;
 }
 
 // Function that creates the context object with two components; the 'provider' and the 'consumer' component. The provider-component is used to wrap around components to provide context values. The conumer-component is Used to consume the context values (though in modern React, useContext hook is typically used instead). 
@@ -23,6 +25,7 @@ export const Web3Provider: React.FC<React.PropsWithChildren<{}>> = ({ children }
     
     const [provider, setProvider] = useState<any>(null);
     const [account, setAccount] = useState<string | null>(null);
+    const [balance, setBalance] = useState<string | null>(null);
 
     // Detect & set the provider object
     useEffect(() => {
@@ -38,6 +41,35 @@ export const Web3Provider: React.FC<React.PropsWithChildren<{}>> = ({ children }
         detectProvider(); 
     }, []);
 
+    // Handling disconnect and change of accounts
+    useEffect(() => {
+        if (provider) {
+            provider.on('accountsChanged', handleAccountsChanged);
+            provider.on('disconnect', disconnectWallet);
+            return () => {
+                provider.removeListener('accountsChanged', handleAccountsChanged);
+                provider.removeListener('disconnect', disconnectWallet);
+            };
+        }
+    }, [provider]);
+
+    const handleAccountsChanged = async (accounts: string[]) => {
+        if (accounts.length === 0) {
+            // User disconnected their wallet
+            disconnectWallet();
+        } else {
+            // User switched accounts
+            setAccount(accounts[0]);
+            const balanceWei = await provider.request({ method: 'eth_getBalance', params: [accounts[0], 'latest'] });
+            setBalance(provider.utils.fromWei(balanceWei, 'ether'));
+        }
+    };
+
+    const disconnectWallet = () => {
+        setAccount(null);
+        setBalance(null);
+    };
+
     // Function to connect to the wallet and set the account
     const connectWallet = async () => {
         if (provider) {
@@ -45,9 +77,14 @@ export const Web3Provider: React.FC<React.PropsWithChildren<{}>> = ({ children }
                 if (provider.isMetaMask) { 
                     const accounts = await provider.request({method: 'eth_requestAccounts'});
                     setAccount(accounts[0]);
+                    const balanceWei = await provider.request({method: 'eth_getBalance', params: [accounts[0], 'latest']});
+                    console.log('balanceWei:', balanceWei);
+                    setBalance((Number(balanceWei) / Math.pow(10, 18)).toFixed(2));
                 } else if (provider.isPhantom) {
                     const response = await provider.connect();
                     setAccount(response.publicKey.toString());
+                    const balanceLamports = await provider.getBalance(response.publicKey);
+                    setBalance((balanceLamports / 1e9).toString());
                 }
             } catch (error) {
                 console.log('Error connecting to wallet:', error)
@@ -57,7 +94,7 @@ export const Web3Provider: React.FC<React.PropsWithChildren<{}>> = ({ children }
 
     // Set the context (with its values provider, account, connectWallet) and pass them down to the component tree
     return (
-        <Web3Context.Provider value={{ provider, account, connectWallet }}>
+        <Web3Context.Provider value={{ provider, account, balance, connectWallet, disconnectWallet }}>
             {children}
         </Web3Context.Provider>
     );
