@@ -47,8 +47,8 @@ export default function Dashboard() {
             </div>
         </div>
       </div>
-      <div className='flex-grow p-6 md:overflow-y-auto md:p-12'>
-        <main>
+      <div className='flex-grow h-full p-2 md:overflow-y-auto md:p-4'>
+        <main className="flex flex-col h-full">
           
           {/* <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4"> */}
             {/* <Card title="Collected" value={totalPaidInvoices} type="collected" /> */}
@@ -62,7 +62,7 @@ export default function Dashboard() {
           {/* </div> */}
           
           <div><ConnectionDot /></div>
-          <div className="flex-grow bg-white bg-opacity-5 w-full rounded-lg mt-1">
+          <div className="flex-grow bg-white bg-opacity-20 w-full h-full rounded-lg mt-1">
             <Outlet />
           </div>
         </main>  
