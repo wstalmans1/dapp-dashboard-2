@@ -6,6 +6,8 @@ import ConnectionDot from '../utils/connectiondot';
 export default function Dashboard() {
   return (
     <div className="flex h-screen flex-col md:flex-row md:overflow-hidden bg-gradient-to-r from-british-racing-green to-lighterbritish-racing-green text-gray-50">
+      
+      {/* ------- Navigation ------- */}
       <div className="w-full flex-none md:w-64">
         <div className="flex h-full flex-col px-3 py-4 md:px-2">
           <div className="mb-2 flex flex-col justify-between h-20 md:h-40 items-stretch rounded-md bg-gradient-to-r from-british-racing-green to-rich-gold" >
@@ -47,6 +49,8 @@ export default function Dashboard() {
             </div>
         </div>
       </div>
+
+      {/* ------- Main Content ------- */}
       <div className='flex-grow h-full p-2 md:overflow-y-auto md:p-4'>
         <main className="flex flex-col h-full">
           
