@@ -8,11 +8,11 @@ export default function HomePage() {
         <p className="text-lg mb-4">Welcome to your application. To get started, navigate to the dashboard.</p>
         <Link to="/dashboard" className="text-blue-500 hover:underline">Go to Dashboard</Link>
         <div className="flex flex-col list-disc mt-10 ml-20">
-          <p style={{ paddingLeft: '1em', textIndent: '-1em' }} className="pb-3">• You mint tokens by building your reputation</p>
-          <p style={{ paddingLeft: '1em', textIndent: '-1em' }} className="pb-3">• Tokens are needed by clients to pay for services proposed by the TBA DAO</p>
-          <p style={{ paddingLeft: '1em', textIndent: '-1em' }} className="pb-3">• You adhere to the DAO Constitution, by participating. You can change the Constitution</p>
-          <p style={{ paddingLeft: '1em', textIndent: '-1em' }} className="pb-3">• You can change the DAO Constitution by particpating in the DAO Governance</p>
-          <p style={{ paddingLeft: '1em', textIndent: '-1em' }} className="pb-3">• You manage your role in the DAO by participating in the DAO Governance</p>
+          <p style={{ paddingLeft: '1em', textIndent: '-1em' }} className="pb-3">• Mint tokens by building your reputation</p>
+          <p style={{ paddingLeft: '1em', textIndent: '-1em' }} className="pb-3">• Sell tokens to clients to pay for services</p>
+          <p style={{ paddingLeft: '1em', textIndent: '-1em' }} className="pb-3">• Adhere to the DAO Constitution</p> 
+          <p style={{ paddingLeft: '1em', textIndent: '-1em' }} className="pb-3">• Govern the DAO Constitution and its operations</p>
+          <p style={{ paddingLeft: '1em', textIndent: '-1em' }} className="pb-3">• Manage your role in the DAO</p>
         </div>
     </div>
     );
