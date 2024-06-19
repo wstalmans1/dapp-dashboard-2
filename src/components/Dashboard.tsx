@@ -12,7 +12,8 @@ export default function Dashboard() {
         <div className="flex h-full flex-col px-3 py-4 md:px-2">
           <div className="mb-2 flex flex-col justify-between h-20 md:h-40 items-stretch rounded-md bg-gradient-to-r from-british-racing-green to-rich-gold" >
             <div className="w-full flex flex-col items-start text-xs sm:text-base md:text-lg lg:text-xl p-2">
-              <div className="block sm:hidden text-lg">Team Blockchain Advisors</div>
+              <div className="block sm:hidden text-lg">Global Team Blockchain Advisors</div>
+              <div className="hidden sm:block">Global</div>
               <div className="hidden sm:block">Team</div>
               <div className="hidden sm:block">Blockchain</div>
               <div className="hidden sm:block">Advisors</div>
