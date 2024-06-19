@@ -6,6 +6,7 @@ export default {
   ],
   theme: {
     extend: {
+      content: ['before'],
       colors: {
         'darkerbritish-racing-green': '#002814',
         'british-racing-green': '#004225', // Adding British racing green color
@@ -22,5 +23,8 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/typography'),
+    // ...
+  ],
 }
