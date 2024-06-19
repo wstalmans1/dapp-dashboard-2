@@ -1,5 +1,5 @@
 import '../styles/main.css';
-import { PowerIcon, UserGroupIcon, HomeIcon, DocumentDuplicateIcon } from '@heroicons/react/24/outline';
+import { UserGroupIcon, HomeIcon, DocumentDuplicateIcon } from '@heroicons/react/24/outline';
 import { NavLink, Outlet } from "react-router-dom";
 import ConnectionDot from '../utils/connectiondot';
 
