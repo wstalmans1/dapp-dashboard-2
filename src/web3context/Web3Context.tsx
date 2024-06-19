@@ -53,6 +53,12 @@ export const Web3Provider: React.FC<React.PropsWithChildren<{}>> = ({ children }
         }
     }, [provider]);
 
+    useEffect(() => {
+        if (account) {
+            fetchBalance(account);
+        }
+    }, [account]);
+
     const handleAccountsChanged = async (accounts: string[]) => {
         if (accounts.length === 0) {
             // User disconnected their wallet
@@ -60,8 +66,23 @@ export const Web3Provider: React.FC<React.PropsWithChildren<{}>> = ({ children }
         } else {
             // User switched accounts
             setAccount(accounts[0]);
-            const balanceWei = await provider.request({ method: 'eth_getBalance', params: [accounts[0], 'latest'] });
-            setBalance(provider.utils.fromWei(balanceWei, 'ether'));
+            //const balanceWei = await provider.request({ method: 'eth_getBalance', params: [accounts[0], 'latest'] });
+            //setBalance(provider.utils.fromWei(balanceWei, 'ether'));
+        }
+    };
+
+    const fetchBalance = async (account: string) => {
+        if (provider) {
+            if (provider.isMetaMask) {
+                const balanceWei = await provider.request({
+                    method: 'eth_getBalance',
+                    params: [account, 'latest'],
+                });
+                setBalance((Number(balanceWei) / Math.pow(10, 18)).toFixed(2));
+            } else if (provider.isPhantom) {
+                const balanceLamports = await provider.getBalance(account);
+                setBalance((balanceLamports / 1e9).toString());
+            }
         }
     };
 
@@ -77,14 +98,14 @@ export const Web3Provider: React.FC<React.PropsWithChildren<{}>> = ({ children }
                 if (provider.isMetaMask) { 
                     const accounts = await provider.request({method: 'eth_requestAccounts'});
                     setAccount(accounts[0]);
-                    const balanceWei = await provider.request({method: 'eth_getBalance', params: [accounts[0], 'latest']});
-                    console.log('balanceWei:', balanceWei);
-                    setBalance((Number(balanceWei) / Math.pow(10, 18)).toFixed(2));
+                    //const balanceWei = await provider.request({method: 'eth_getBalance', params: [accounts[0], 'latest']});
+                    //console.log('balanceWei:', balanceWei);
+                    //setBalance((Number(balanceWei) / Math.pow(10, 18)).toFixed(2));
                 } else if (provider.isPhantom) {
                     const response = await provider.connect();
                     setAccount(response.publicKey.toString());
-                    const balanceLamports = await provider.getBalance(response.publicKey);
-                    setBalance((balanceLamports / 1e9).toString());
+                    //const balanceLamports = await provider.getBalance(response.publicKey);
+                    //setBalance((balanceLamports / 1e9).toString());
                 }
             } catch (error) {
                 console.log('Error connecting to wallet:', error)
